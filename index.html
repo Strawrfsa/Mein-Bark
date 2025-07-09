@@ -27,7 +27,7 @@
             color: var(--primary-text-color);
             line-height: 1.7;
             overflow-x: hidden;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-crosshair"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>') 12 12, auto;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4m12 0h-4M12 4v4m0 12v-4" stroke="black"/><rect x="8" y="10" width="8" height="4" rx="1" fill="black"/></svg>') 12 12, auto; /* Charlie Chaplin mustache cursor */
             background-image:
                 linear-gradient(var(--grid-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -62,13 +62,13 @@
         .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; color: var(--primary-text-color); position: relative; cursor: pointer; }
         .glitch-wrapper:hover h1 { animation: glitch-animation 0.4s infinite; }
         .hero h1::before, .hero h1::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; overflow: hidden; opacity: 0; }
-        .hero h1::before { left: 2px; text-shadow: -2px 0 var(--glitch-color-1); animation: glitch-before 2s infinite linear alternate-reverse; }
-        .hero h1::after { left: -2px; text-shadow: -2px 0 var(--glitch-color-2), 2px 2px var(--glitch-color-1); animation: lights 2s infinite linear alternate-reverse; }
+        .hero h1::before { left: 2px; text-shadow: -2px 0 var dangers; animation: glitch-before 2s infinite linear alternate-reverse; }
+        .hero h1::after { left: -2px; text-shadow: -2px 0 var(--glitch-color-2), 2px 2px var(--glitch-color-1); animation: glitch-after 2s infinite linear alternate-reverse; }
         @keyframes glitch-before { 0% { clip-path: inset(89% 0 1% 0); opacity: 1; } 100% { clip-path: inset(43% 0 25% 0); opacity: 1; } }
         @keyframes glitch-after { 0% { clip-path: inset(79% 0 19% 0); opacity: 1; } 100% { clip-path: inset(10% 0 81% 0); opacity: 1; } }
         @keyframes glitch-animation { 0% { transform: translate(0); } 20% { transform: translate(-3px, 3px); } 40% { transform: translate(-3px, -3px); } 60% { transform: translate(3px, 3px); } 80% { transform: translate(3px, -3px); } 100% { transform: translate(0); } }
         .hero .subtitle { font-size: 1.5rem; color: var(--accent-color); margin: 20px 0 40px 0; text-shadow: 0 0 10px var(--accent-glow); }
-        .cta-button { display: inline-block; background: var(--accent-color); color: var(--background-color); padding: 15xtures 35px; border-radius: 50px; text-decoration: none; font-weight: 700; position: relative; overflow: hidden; border: 2px solid var --accent-color); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: pulse 2s infinite; }
+        .cta-button { display: inline-block; background: var(--accent-color); color: var(--background-color); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; position: relative; overflow: hidden; border: 2px solid var(--accent-color); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: pulse 2s infinite; }
         .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent); transition: left 0.6s ease; }
         .cta-button:hover::before { left: 100%; }
         .cta-button:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 35px var(--accent-glow); animation-play-state: paused; }
@@ -82,7 +82,7 @@
         .photo-container { position: relative; width: 250px; height: 250px; border-radius: 50%; border: 3px solid var(--accent-color); box-shadow: 0 0 25px var(--accent-glow); overflow: hidden; cursor: pointer; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); }
         .photo-container img { width: 80%; height: 80%; object-fit: contain; border-radius: 0; filter: none; transition: none; }
         .photo-container:hover img { filter: none; }
-        .photo-container::before, .photo-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('chihuahua_logo.png'); background-size: 80%; background-repeat: no-repeat; background-position: center; filter: none; opacity: 0; }
+        .photo-container::before, .photo-container::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('logo.png'); background-size: 80%; background-repeat: no-repeat; background-position: center; filter: none; opacity: 0; }
         .photo-container:hover::before { animation: photo-glitch 0.4s infinite; }
         .photo-container:hover::after { animation: photo-glitch 0.4s infinite reverse; }
         @keyframes photo-glitch { 0% { transform: translate(0); clip-path: inset(89% 0 1% 0); opacity: 1; } 20% { transform: translate(-5px, 2px); clip-path: inset(23% 0 50% 0); opacity: 1; } 60% { transform: translate(5px, -2px); clip-path: inset(60% 0 10% 0); opacity: 1; } 100% { transform: translate(0); clip-path: inset(89% 0 1% 0); opacity: 1; } }
@@ -103,7 +103,7 @@
     <header class="main-header">
         <div class="container">
             <a href="#hero" class="logo">
-                <img src="chihuahua_logo.png" alt="Mein Bark Logo">
+                <img src="logo.png" alt="Mein Bark Logo">
                 Mein Bark<span>!</span>
             </a>
             <nav class="main-nav">
@@ -135,20 +135,20 @@
                 <h2>Mein Bark: The Führer of Memecoins!</h2>
                 <div class="about-me-layout">
                     <div class="photo-container">
-                        <img src="chihuahua_logo.png" alt="Chihuahua Führer">
+                        <img src="logo.png" alt="Chihuahua Führer">
                     </div>
                     <div class="about-me-text">
                         <p>
-                            Bow to <strong>Mein Bark</strong>, the most ferocious Chihuahua in the crypto kennel! I’m no ordinary pup—I’m the Führer of financial chaos, sporting my glorious mustache and a bark that shakes wallets! This coin isn’t just money; it’s a <strong>revolution</strong> to conquer the blockchain!
+                            Bow to <strong>Mein Bark</strong>, the fiercest Chihuahua in the crypto kennel! I’m no mere pup—I’m the Führer of financial chaos, rocking a mustache that screams power! This coin ain’t just money; it’s a <strong>revolution</strong> to conquer all blockchains!
                         </p>
                         <p>
-                            We storm <strong>Solana</strong> for its lightning-fast conquests. No weak hands allowed in my Reich! Join my army of degens, stack those bags, and prepare for the ultimate crypto takeover. Papers? We don’t need no stinkin’ papers—just pure, unhinged domination!
+                            We blitz <strong>Solana</strong> for its lightning-fast conquests. Weak hands? Not in my Reich! Join my degen army, stack those bags, and march toward crypto domination. Whitepapers? Bah! We burn those and bark our way to glory!
                         </p>
                     </div>
                 </div>
             </section>
             <section id="tokenomics" class="content-section">
-                <h2>Spoils of War (Tokenomics, You Peasants!)</h2>
+                <h2>Spoils of War (Tokenomics, You Filthy Degens!)</h2>
                 <ul class="skills-list">
                     <li>Total Supply: Enough to flood the crypto streets!</li>
                     <li>Taxes: We tax the weak to feed the strong!</li>
@@ -158,7 +158,7 @@
                     <li>Blockchain: Solana (for blitzkrieg transactions!)</li>
                 </ul>
                 <p style="text-align:center; margin-top: 30px;">
-                    Forget the fine print—grab a bag and salute the Reich!
+                    Forget the details—grab a bag and salute the Reich!
                 </p>
             </section>
             <section id="roadmap" class="content-section">
@@ -212,7 +212,7 @@
             renderer.setPixelRatio(window.devicePixelRatio);
             container.appendChild(renderer.domElement);
             const loader = new THREE.TextureLoader();
-            loader.load('chihuahua_logo.png', function(texture) {
+            loader.load('logo.png', function(texture) {
                 const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
                 for (let i = 0; i < logoCount; i++) {
                     const size = Math.random() * 0.8 + 0.3;
